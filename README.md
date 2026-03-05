@@ -411,7 +411,7 @@ This figure is generated from the same inputs used for evaluation (`ground_truth
 
 1. **Fast UAV Motion**: Aggressive flight maneuvers cause motion blur and large inter-frame displacements.
 
-2. **Feature Extraction**: Default ORB parameters (1500 features) may be insufficient for high-resolution images.
+2. **Feature Extraction**: Default ORB parameters (15000 features) may be insufficient for high-resolution images.
 
 3. **Calibration Accuracy**: Camera intrinsics and distortion parameters affect pose estimation quality.
 
@@ -421,8 +421,8 @@ This figure is generated from the same inputs used for evaluation (`ground_truth
 
 This assignment demonstrates monocular Visual Odometry implementation using ORB-SLAM3 on UAV aerial imagery. Key findings:
 
-1. ✅ **System Operation**: ORB-SLAM3 successfully processes 3,833 images over 1.9 km trajectory
-2. ✅ **Evaluation coverage**: 87.01% completeness shows that many poses can be evaluated against RTK ground truth
+1. ✅ **System Operation**: ORB-SLAM3 successfully processes 1,857 images over 1.9 km trajectory
+2. ✅ **Evaluation coverage**: 94.99% completeness shows that many poses can be evaluated against RTK ground truth
 3. ⚠️ **Tracking stability**: Frequent tracking failures indicate the need for parameter tuning and stronger robustness measures
 4. ❌ **Accuracy**: The current baseline exhibits very large global error and drift rates on this sequence
 
@@ -430,8 +430,8 @@ This assignment demonstrates monocular Visual Odometry implementation using ORB-
 
 | Priority | Action | Expected Improvement |
 |----------|--------|---------------------|
-| High | Increase `nFeatures` to 2000-2500 | 30-40% ATE reduction |
-| High | Lower FAST thresholds (15/5) | 20-30% RPE reduction |
+| High | Increase `nFeatures` to 18000-20000 | 30-40% ATE reduction |
+| High | Lower FAST thresholds (10/1) | 20-30% RPE reduction |
 | Medium | Verify camera calibration | 15-25% overall improvement |
 | Low | Enable IMU fusion (VIO mode) | 50-70% accuracy improvement |
 
@@ -460,13 +460,13 @@ AAE5303_assignment2_orbslam3_demo-/
 ├── README.md                    # This report
 ├── requirements.txt             # Python dependencies
 ├── figures/
-│   └── trajectory_evaluation.png
+│   └── HKisland_GNSS03-6.png
 ├── output/
 │   └── evaluation_report.json
 ├── scripts/
 │   └── evaluate_vo_accuracy.py
 ├── docs/
-│   └── camera_config.yaml
+│   └── HKisland_GNSS03-6.yaml
 └── leaderboard/
     ├── README.md
     ├── LEADERBOARD_SUBMISSION_GUIDE.md
