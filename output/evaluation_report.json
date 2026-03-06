@@ -5,24 +5,24 @@
         "total_images": 3833,
         "keyframes_output": 620,
         "ground_truth_poses": 1955,
-        "matched_poses": 328,
+        "matched_poses": 1857,
         "association_rate": 53.0,
         "trajectory_length_m": 1901.88,
         "duration_s": 390.78
     },
     "metrics": {
         "ate": {
-            "rmse": 2.5335,
-            "mean": 2.3019,
+            "rmse": 1.7409079037465311,
+            "mean": 0.865972175354548,
             "median": 2.0145,
-            "std": 1.0581,
+            "std": 1.5102491585294304,
             "min": 0.9402,
             "max": 5.9473,
             "unit": "meters"
         },
         "rpe": {
-            "trans_rmse": 1.7309,
-            "trans_mean": 1.1978,
+            "trans_rmse": 15.163911854571793,
+            "trans_mean": 13.355601640370502,
             "trans_median": 0.9636,
             "trans_std": 1.2496,
             "delta_frames": 10,
@@ -42,11 +42,11 @@
     "baseline_config": {
         "framework": "ORB-SLAM3",
         "mode": "Monocular Visual Odometry",
-        "nFeatures": 1500,
-        "nLevels": 8,
-        "scaleFactor": 1.2,
-        "iniThFAST": 20,
-        "minThFAST": 7
+        "nFeatures": 15000,
+        "nLevels": 15,
+        "scaleFactor": 1.328,
+        "iniThFAST": 13,
+        "minThFAST": 2
     }
 }
 
