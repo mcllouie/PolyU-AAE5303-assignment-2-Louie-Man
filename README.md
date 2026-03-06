@@ -271,7 +271,7 @@ RTK (Real-Time Kinematic) GPS provides centimeter-level positioning accuracy:
 | **Framework** | ORB-SLAM3 (C++) |
 | **Mode** | Monocular Visual Odometry |
 | **Vocabulary** | ORBvoc.txt (pre-trained) |
-| **Operating System** | Linux (Ubuntu 22.04) |
+| **Operating System** | MacOS Tahoe (26.2) (VM of Ubuntu 20.04 via UTM) |
 
 ### Camera Calibration
 
