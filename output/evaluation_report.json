@@ -29,8 +29,8 @@
             "unit": "meters"
         },
         "scale_error": {
-            "scale_ratio": 00,
-            "scale_drift_percent": 00,
+            "scale_ratio": 1,
+            "scale_drift_percent": 741,
             "unit": "percentage"
         }
     },
