@@ -36,8 +36,8 @@
     },
     "alignment": {
         "method": "Sim(3)",
-        "estimated_scale": 1.0857,
-        "translation": [-0.486, 0.634, 0.909]
+        "estimated_scale": 7.4120233006636935,
+        "translation": [0.33011584, 0.06634049, 6.1227189]
     },
     "baseline_config": {
         "framework": "ORB-SLAM3",
