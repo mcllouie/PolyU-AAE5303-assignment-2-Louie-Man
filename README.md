@@ -395,15 +395,13 @@ This figure is generated from the same inputs used for evaluation (`ground_truth
 
 ### Strengths
 
-1. **High evaluation coverage**: 87% completeness indicates that a large portion of the ground-truth poses can be associated and evaluated.
+1. **High evaluation coverage**: 94.99% completeness indicates that a large portion of the ground-truth poses can be associated and evaluated.
 
 2. **End-to-end pipeline**: The system produces a usable TUM trajectory and can be evaluated reproducibly with standard tooling.
 
 ### Limitations
 
-1. **Tracking Instability**: Frequent "Fail to track local map!" errors observed, leading to multiple map resets (2 maps created).
-
-2. **Large drift**: Both translation and rotation drift rates are high, indicating unstable local tracking and/or poor geometric constraints.
+1. **Large drift**: Rotation drift rates are high, indicating poor geometric constraints.
 
 3. **No loop closure**: Pure VO mode without loop closure or relocalization accumulates drift over long trajectories.
 
@@ -423,17 +421,17 @@ This assignment demonstrates monocular Visual Odometry implementation using ORB-
 
 1. ✅ **System Operation**: ORB-SLAM3 successfully processes 1,857 images over 1.9 km trajectory
 2. ✅ **Evaluation coverage**: 94.99% completeness shows that many poses can be evaluated against RTK ground truth
-3. ⚠️ **Tracking stability**: Frequent tracking failures indicate the need for parameter tuning and stronger robustness measures
-4. ❌ **Accuracy**: The current baseline exhibits very large global error and drift rates on this sequence
+3. ✅ **Tracking stability**: Seldom tracking failures indicate strong robustness measures
+4. ⚠️ **Accuracy**: The current baseline exhibits very rotation drift rates error on this sequence
 
 ### Recommendations for Improvement
 
 | Priority | Action | Expected Improvement |
 |----------|--------|---------------------|
-| High | Increase `nFeatures` to 18000-20000 | 30-40% ATE reduction |
-| High | Lower FAST thresholds (10/1) | 20-30% RPE reduction |
+| High | Enable IMU fusion (VIO mode) | 50-70% accuracy improvement |
+| Medium | Lower FAST thresholds (10/1) | 20-30% RPE reduction |
 | Medium | Verify camera calibration | 15-25% overall improvement |
-| Low | Enable IMU fusion (VIO mode) | 50-70% accuracy improvement |
+| Low | Increase `nFeatures` to 18000-20000 | 10-20% ATE reduction |
 
 ---
 
@@ -468,6 +466,11 @@ AAE5303_assignment2_orbslam3_demo-/
 │   └── generate_report_figures.py
 ├── docs/
 │   └── HKisland_GNSS03-6.yaml
+│   └── Ouput Data by evaluate_vo_accuracy
+│       └── ate
+│       └── rpe_rot
+│       └── rpe_trans
+│       └── metrics.json
 └── leaderboard/
     ├── README.md
     ├── LEADERBOARD_SUBMISSION_GUIDE.md
